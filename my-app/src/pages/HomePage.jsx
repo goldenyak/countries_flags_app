@@ -16,7 +16,7 @@ const HomePage = ({countries, setCountries}) => {
     const handleSearch = (search, region) => {
         let data = [...countries]
         if(region) {
-            data = data.find(element => element.region.includes(region) )
+            data = data.filter(element => element.region.includes(region) )
         }
         if(search) {
             data = data.filter(element => element.name.toLowerCase().includes(search.toLowerCase()))
@@ -28,7 +28,6 @@ const HomePage = ({countries, setCountries}) => {
     useEffect(() => {
         if(!countries.length)
         axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data))
-        console.log(countries)
         // eslint-disable-next-line
     }, [countries.length, setCountries]);
 
