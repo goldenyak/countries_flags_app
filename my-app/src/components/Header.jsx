@@ -51,10 +51,10 @@ export const Header = () => {
         <HeaderEl>
             <Container>
                 <Wrapper>
-                    <Title>Where is the world?</Title>
+                    <Title>Хотите найти страну?</Title>
                     <ModeSwitcher onClick={toggleTheme}>
                         {/*{theme === 'light' ? <IoMoonOutline/> + 'Light Theme'  : <IoMoonSharp/> + 'Dark Theme'}*/}
-                        <IoMoonSharp/> {theme === 'light' ? 'Dark Theme' : 'Light Theme'}
+                        <IoMoonSharp/> {theme === 'light' ? 'Темная тема' : 'Светлая тема'}
                     </ModeSwitcher>
                 </Wrapper>
             </Container>

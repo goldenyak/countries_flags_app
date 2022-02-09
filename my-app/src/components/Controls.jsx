@@ -4,11 +4,11 @@ import {CustomSelect} from "./CustomSelect";
 import styled from "styled-components";
 
 const options = [
-    {value: 'Africa', label: 'Africa'},
-    {value: 'America', label: 'America'},
-    {value: 'Asia', label: 'Asia'},
-    {value: 'Europe', label: 'Europe'},
-    {value: 'Oceania', label: 'Oceania'},
+    {value: 'Africa', label: 'Африка'},
+    {value: 'America', label: 'Америка'},
+    {value: 'Asia', label: 'Азия'},
+    {value: 'Europe', label: 'Европа'},
+    {value: 'Oceania', label: 'Австралия'},
 ];
 
 const Wrapper = styled.div`
@@ -39,7 +39,7 @@ const Controls = ({onSearch}) => {
         <Wrapper>
             <Search search={search} setSearch={setSearch}/>
             <CustomSelect options={options}
-                          placeholder='Filter by Region'
+                          placeholder='Фильтр по континентам'
                           isClearable
                           isSearchable={false}
                           value={region}

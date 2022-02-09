@@ -4,6 +4,7 @@ import {IoArrowBackCircleOutline} from "react-icons/io5";
 import styled from "styled-components";
 import axios from "axios";
 import {searchByCountry} from "../config";
+import {Info} from "../components/Info";
 
 const Button = styled.button`
   border: none;
@@ -14,7 +15,7 @@ const Button = styled.button`
   align-items: center;
   margin-bottom: 50px;
   cursor: pointer;
-  
+
   &:hover {
     opacity: 0.7;
   }
@@ -41,8 +42,7 @@ const Details = () => {
                 <IoArrowBackCircleOutline style={{fontSize: "22px"}}/>
                 Назад
             </Button>
-
-            Details {name}
+            {country && (<Info {...country}/>)}
         </div>
     );
 };

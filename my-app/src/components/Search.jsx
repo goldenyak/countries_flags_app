@@ -21,7 +21,7 @@ const InputContainer = styled.label`
 `;
 const Input = styled.input.attrs({
     type: "search",
-    placeholder: "Search for a country..."
+    placeholder: "Найти страну..."
 })`
   margin-left: 2rem;
   border: none;
