@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/countries_flags_app/static/css/main.5dc71fc6.css",
+    "main.js": "/countries_flags_app/static/js/main.99c0ddc0.js",
+    "static/js/787.28cb0dcd.chunk.js": "/countries_flags_app/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/countries_flags_app/index.html",
+    "main.5dc71fc6.css.map": "/countries_flags_app/static/css/main.5dc71fc6.css.map",
+    "main.99c0ddc0.js.map": "/countries_flags_app/static/js/main.99c0ddc0.js.map",
+    "787.28cb0dcd.chunk.js.map": "/countries_flags_app/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5dc71fc6.css",
+    "static/js/main.99c0ddc0.js"
+  ]
+}
