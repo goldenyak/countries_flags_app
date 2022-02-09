@@ -15,10 +15,10 @@ const HomePage = ({countries, setCountries}) => {
 
     const handleSearch = (search, region) => {
         let data = [...countries]
-        if(region) {
-            data = data.filter(element => element.region.includes(region) )
+        if (region) {
+            data = data.filter(element => element.region.includes(region))
         }
-        if(search) {
+        if (search) {
             data = data.filter(element => element.name.toLowerCase().includes(search.toLowerCase()))
         }
 
@@ -26,42 +26,72 @@ const HomePage = ({countries, setCountries}) => {
     }
 
     useEffect(() => {
-        if(!countries.length)
-        axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data))
+        if (!countries.length)
+            axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data))
         // eslint-disable-next-line
-    }, [countries.length, setCountries]);
+    }, []);
+
+    console.log(countries)
+    console.log(filteredCountries)
 
     return (
-       <>
-           <Controls onSearch={handleSearch}/>
-           <List>
-               {filteredCountries.map( c => {
-                   const countyInfo = {
-                       img: c.flags.png,
-                       name: c.name,
-                       info: [
+        <>
+            <Controls onSearch={handleSearch}/>
+            <List>
+                {filteredCountries.length
+                    ?
+                    filteredCountries.map(c => {
+                        const countyInfo = {
+                            img: c.flags.png,
+                            name: c.name,
+                            info: [
 
-                           {
-                               title: 'Population',
-                               description: c.population.toLocaleString(),
-                           },
-                           {
-                               title: 'Region',
-                               description: c.region,
-                           },
-                           {
-                               title: 'Capital',
-                               description: c.capital,
-                           },
-                       ],
-                   }
+                                {
+                                    title: 'Population',
+                                    description: c.population.toLocaleString(),
+                                },
+                                {
+                                    title: 'Region',
+                                    description: c.region,
+                                },
+                                {
+                                    title: 'Capital',
+                                    description: c.capital,
+                                },
+                            ],
+                        }
+                        return (
+                            <Card key={c.name} {...countyInfo} onClick={() => navigate(`/country/${c.name}`)}/>
+                        )
+                    })
+                    :
+                    countries.map(c => {
+                        const countyInfo = {
+                            img: c.flags.png,
+                            name: c.name,
+                            info: [
 
-                   return (
-                       <Card key={c.name} {...countyInfo} onClick={() => navigate(`/country/${c.name}`)}/>
-                   )
-               })}
-           </List>
-       </>
+                                {
+                                    title: 'Population',
+                                    description: c.population.toLocaleString(),
+                                },
+                                {
+                                    title: 'Region',
+                                    description: c.region,
+                                },
+                                {
+                                    title: 'Capital',
+                                    description: c.capital,
+                                },
+                            ],
+                        }
+                        return (
+                            <Card key={c.name} {...countyInfo} onClick={() => navigate(`/country/${c.name}`)}/>
+                        )
+                    })
+                }
+            </List>
+        </>
     );
 };
 

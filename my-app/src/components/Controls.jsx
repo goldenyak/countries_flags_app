@@ -30,13 +30,14 @@ const Controls = ({onSearch}) => {
 
     useEffect(() => {
         const regionValue = region?.value || '';
-        onSearch(search)
+        onSearch(search, regionValue)
+
         // eslint-disable-next-line
     }, [search, region])
 
     return (
         <Wrapper>
-            <Search onChange={onSearch} search={search} setSearch={setSearch}/>
+            <Search search={search} setSearch={setSearch}/>
             <CustomSelect options={options}
                           placeholder='Filter by Region'
                           isClearable
